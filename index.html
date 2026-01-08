@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense Tracker</h1>
+        </header>
+
+        <div class="balance-section">
+            <div class="card">
+                <h2>Current Balance</h2>
+                <p id="current-balance">₵5,000.00</p>
+            </div>
+            <div class="card">
+                <h2>Total Income</h2>
+                <p id="total-income">₵0.00</p>
+            </div>
+            <div class="card">
+                <h2>Total Expenses</h2>
+                <p id="total-expenses">₵0.00</p>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="add-income-btn" class="add-income-btn">Add Income</button>
+            <button id="add-expense-btn" class="add-btn">Add Expense</button>
+        </div>
+
+        <div class="incomes-section">
+            <h2>Incomes</h2>
+            <ul id="incomes-list"></ul>
+        </div>
+
+        <div class="expenses-section">
+            <h2>Expenses</h2>
+            <ul id="expenses-list"></ul>
+        </div>
+    </div>
+
+    <!-- Modal for adding expense -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Expense</h2>
+            <form id="expense-form">
+                <label for="description">Description:</label>
+                <input type="text" id="description" required>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" step="0.01" min="0" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+
+                <button type="submit">Add Expense</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Modal for adding income -->
+    <div id="income-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-income">&times;</span>
+            <h2>Add New Income</h2>
+            <form id="income-form">
+                <label for="income-description">Description:</label>
+                <input type="text" id="income-description" required>
+
+                <label for="income-amount">Amount:</label>
+                <input type="number" id="income-amount" step="0.01" min="0.01" required>
+
+                <label for="income-date">Date:</label>
+                <input type="date" id="income-date">
+
+                <button type="submit">Add Income</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
